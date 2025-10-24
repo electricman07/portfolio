@@ -1,3 +1,5 @@
+import AppWrapper from "@/components/AppWrapper/AppWrapper";
+import { englishTexts } from "@/utils/text";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -12,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Glen the Dev",
+  title: `${englishTexts.aboutMe.name} | Home`,
   description: "My Portfolio",
 };
 
@@ -24,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <AppWrapper>{children}</AppWrapper>
       </body>
     </html>
   );
