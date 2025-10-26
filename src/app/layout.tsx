@@ -1,15 +1,17 @@
 import AppWrapper from "@/components/AppWrapper/AppWrapper";
 import { englishTexts } from "@/utils/text";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Jim_Nightshade, Salsa } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jim_Nightshade = Jim_Nightshade({
+  weight: ["400"],
+  variable: "--font-jim_nightshade",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const salsa = Salsa({
+  weight: ["400"],
+  variable: "--font-salsa",
   subsets: ["latin"],
 });
 
@@ -25,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${jim_Nightshade.className} ${salsa.className}`}>
         <AppWrapper>{children}</AppWrapper>
       </body>
     </html>
