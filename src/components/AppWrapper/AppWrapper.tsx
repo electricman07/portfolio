@@ -8,7 +8,7 @@ import {
   ContentContainer,
   GlobalStyle,
 } from "./AppWrapper.styles";
-import AboutMe from "./AboutMe/AboutMe";
+import AboutMe from "../AboutMe/AboutMe";
 import { ILanguageTexts, LANGUAGE } from "@/utils/text";
 
 interface IAppContext {
