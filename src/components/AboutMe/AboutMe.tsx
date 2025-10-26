@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { AboutMeContainer, CallToActionButtons } from "./AboutMe.styles";
 import { AppContext } from "../AppWrapper/AppWrapper";
+import { HiOutlineMail } from "react-icons/hi";
+import { FiPhoneForwarded } from "react-icons/fi";
 
 const AboutMe = () => {
-  const { languageTexts } = useContext(AppContext)!;
+  const { languageTexts, theme } = useContext(AppContext)!;
   return (
     <AboutMeContainer>
       <div>
@@ -17,6 +19,12 @@ const AboutMe = () => {
             <button onClick={() => null}>
               {languageTexts.aboutMe.downloadResume}
             </button>
+          </a>
+          <a href="mailto:example@example.com" className="icon">
+            <HiOutlineMail size={"1.5vw"} color={theme.primaryColor} />
+          </a>
+          <a href="tel:123-456-7890" className="icon">
+            <FiPhoneForwarded size={"1.5vw"} color={theme.primaryColor} />
           </a>
         </CallToActionButtons>
       </div>
