@@ -3,11 +3,13 @@ import {
   AboutMeContainer,
   CallToActionButtons,
   ProfilePicture,
+  SocialLink,
 } from "./AboutMe.styles";
 import { AppContext } from "../AppWrapper/AppWrapper";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhoneForwarded } from "react-icons/fi";
 import Image from "next/image";
+import { SOCIAL_LINKS } from "./aboutMe.utils";
 
 const AboutMe = () => {
   const { languageTexts, theme } = useContext(AppContext)!;
@@ -15,6 +17,17 @@ const AboutMe = () => {
     <AboutMeContainer>
       <div>
         <ProfilePicture>
+          {SOCIAL_LINKS.map(({ href, icon, backgroundColor }, index) => (
+            <SocialLink
+              key={index}
+              target="_blank"
+              href={href}
+              $backgroundColor={backgroundColor}
+              className={`socialLink_${index}`}
+            >
+              {icon}
+            </SocialLink>
+          ))}
           <Image src="/profile-pic.jpg" alt="Profile Picture" fill />
         </ProfilePicture>
         <h1 className="name">{languageTexts.aboutMe.name}</h1>
