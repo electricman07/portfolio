@@ -13,8 +13,10 @@ const AboutMe = () => {
       <div>
         <p className="summary">{languageTexts.aboutMe.description}</p>
         <CallToActionButtons>
-          <a>
-            <button>{languageTexts.aboutMe.downloadResume}</button>
+          <a target="_blank" href="Resume.pdf">
+            <button onClick={() => null}>
+              {languageTexts.aboutMe.downloadResume}
+            </button>
           </a>
         </CallToActionButtons>
       </div>
