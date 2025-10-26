@@ -1,14 +1,22 @@
 import React, { useContext } from "react";
-import { AboutMeContainer, CallToActionButtons } from "./AboutMe.styles";
+import {
+  AboutMeContainer,
+  CallToActionButtons,
+  ProfilePicture,
+} from "./AboutMe.styles";
 import { AppContext } from "../AppWrapper/AppWrapper";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhoneForwarded } from "react-icons/fi";
+import Image from "next/image";
 
 const AboutMe = () => {
   const { languageTexts, theme } = useContext(AppContext)!;
   return (
     <AboutMeContainer>
       <div>
+        <ProfilePicture>
+          <Image src="/profile-pic.jpg" alt="Profile Picture" fill />
+        </ProfilePicture>
         <h1 className="name">{languageTexts.aboutMe.name}</h1>
         <h2 className="title">{languageTexts.aboutMe.title}</h2>
       </div>
